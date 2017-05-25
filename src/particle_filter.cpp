@@ -129,11 +129,11 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
 			}
 		}
 
-		// skip particle if can't see any landmark
+		// skip the particle if can't see any landmark
 		if (predicted.size() == 0) {
 			particles[i].weight = 0;
 			weights[i] = 0;
-			break;
+			continue;
 		}
 
 		//transform observations from local to global frame
